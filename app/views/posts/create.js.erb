@@ -1,0 +1,3 @@
+$('.all-posts').prepend("<%= j render @post %>");
+$('form').trigger("reset");
+$('input[name="post[content]"]').focus();
