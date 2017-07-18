@@ -4,6 +4,7 @@
     <ul class="navlinks left hide-on-med-and-down text-lighten-4">
       <li><%= link_to "Workouts", workouts_path %></li>
       <li><%= link_to "Home", posts_path %></li>
+      <li><%= link_to "My Profile", users_show_path %></li>
     </ul>
     <ul class="navlinks right hide-on-med-and-down text-lighten-4">
       <% if user_signed_in? %>
