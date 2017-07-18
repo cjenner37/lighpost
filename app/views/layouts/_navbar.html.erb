@@ -7,10 +7,10 @@
     </ul>
     <ul class="navlinks right hide-on-med-and-down text-lighten-4">
       <% if user_signed_in? %>
-        <%= link_to "Log Out", destroy_user_session_path %>
+        <li><%= link_to "Log Out", destroy_user_session_path %></li>
       <% else %>
-        <%= link_to "Log In", new_user_session_path %>
-        <%= link_to "Sign Up", new_user_registration_path %>
+        <li><%= link_to "Log In", new_user_session_path %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
       <% end %>
     </ul>
   </div>
