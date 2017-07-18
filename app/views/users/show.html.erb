@@ -1,2 +1,12 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1 align="center">Profile Page of <%= @user.first_name %></h1>
+
+<div id="profile_links">
+	<%= link_to 'Edit Profile', edit_user_registration_path, class: 'link-to-text-color' %>
+	<br>
+	<%= link_to 'Delete Profile', user_registration_path, data: {:confirm => "Really? You don't like us anymore?"}, :method => :delete, class: 'link-to-text-color' %>
+</div>
+
+<div id="profile_posts">
+	<%= @user.posts %>
+	
+</div>
