@@ -6,6 +6,5 @@ class Exercise < ApplicationRecord
 
 
 	validates :name, presence: true
-	validates :content, presence: true
-	validates :muscle_group, presence: true
+	validates :description, presence: true
 end
