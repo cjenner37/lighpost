@@ -1,6 +1,8 @@
 <h1>Post below!</h1>
 <%= render 'form' %>
 
-<% @posts.each do |post| %>
-	<%= post.content %>
-<% end %>
+<div class="all-posts">
+	<% @posts.order(created_at: :desc).each do |post| %>
+		<%= render post %>
+	<% end %>
+</div>
