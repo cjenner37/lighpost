@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  workout: one
+  tried: false
+  favorited: false
+
+two:
+  user: two
+  workout: two
+  tried: false
+  favorited: false
