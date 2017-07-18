@@ -1,24 +1,57 @@
-# README
+Welcome to our fitness app!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Created by Cameron Jenner, Andrew Littlefield, and Devon Patey
 
-Things you may want to cover:
 
-* Ruby version
+The end goal of the app is a social media platform to maximize users' potential.
 
-* System dependencies
+Users can create exercises, create workouts, share workouts, follow other users' workouts, favorite workouts, generate random workouts based on desired muscle groups, and view other users doing similar workouts in their area.
 
-* Configuration
+Users can create recipes, substitute ingredients, generate recipes with auto-substituted ingredients based on dietary restrictions or preferences, share recipes, follow other users, find users using similar recipes in thier area.
 
-* Database creation
+Users can post about their fitness progress, on a general forum, share pictures, follow others, and meet others with similar interests.
 
-* Database initialization
 
-* How to run the test suite
+Stage One of the project is building workout functionality.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+
+
+Interacting with the database: 
+
+Models include: 
+• user
+• post
+• comment
+• image
+• workout
+• subscription (user and workout join table)
+• exercise
+• workout exercises (workout and exercise join table)
+• muscle group
+• muscle group exercises (exercise and muscle group join table)
+
+View all muscle groups:
+MuscleGroup.all
+
+View all muscle group exercises:
+MuscleGroupExercise.all
+
+View all exercises:
+Exercise.all
+
+Make pushups:
+pushups = Exercise.create(name: "Push Ups", description: "Do a push up.")
+
+Make back muscle group:
+back = MuscleGroup.create(name: "back")
+
+Join pushups and back:
+pushups.muscle_group_exercises.create(muscle_group_id: back.id)
+
+View all muscle groups for pushups:
+pushups.muscle_groups
+
+View all exercises for back:
+back.exercises
