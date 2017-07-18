@@ -1,59 +1,71 @@
 Rails.application.routes.draw do
-  get 'subscription/index'
+  get 'comments/index'
 
-  get 'subscription/create'
+  get 'comments/create'
 
-  get 'subscription/new'
+  get 'comments/new'
 
-  get 'subscription/update'
+  get 'comments/update'
 
-  get 'subscription/edit'
+  get 'comments/edit'
 
-  get 'subscription/show'
+  get 'comments/show'
 
-  get 'subscription/destroy'
+  get 'comments/destroy'
 
-  get 'exercise/index'
+  get 'posts/index'
 
-  get 'exercise/create'
+  get 'posts/create'
 
-  get 'exercise/new'
+  get 'posts/new'
 
-  get 'exercise/update'
+  get 'posts/update'
 
-  get 'exercise/edit'
+  get 'posts/edit'
 
-  get 'exercise/show'
+  get 'posts/show'
 
-  get 'exercise/destroy'
+  get 'posts/destroy'
 
-  get 'workout/index'
+  get 'workouts/index'
 
-  get 'workout/create'
+  get 'workouts/create'
 
-  get 'workout/new'
+  get 'workouts/new'
 
-  get 'workout/update'
+  get 'workouts/update'
 
-  get 'workout/edit'
+  get 'workouts/edit'
 
-  get 'workout/show'
+  get 'workouts/show'
 
-  get 'workout/destroy'
+  get 'workouts/destroy'
 
-  get 'post/index'
+  get 'exercises/index'
 
-  get 'post/create'
+  get 'exercises/create'
 
-  get 'post/new'
+  get 'exercises/new'
 
-  get 'post/update'
+  get 'exercises/update'
 
-  get 'post/edit'
+  get 'exercises/edit'
 
-  get 'post/show'
+  get 'exercises/show'
 
-  get 'post/destroy'
+  get 'exercises/destroy'
+
+  get 'subscriptions/index'
+
+  get 'subscriptions/create'
+
+  get 'subscriptions/new'
+
+  get 'subscriptions/update'
+
+  get 'subscriptions/show'
+
+  get 'subscriptions/destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
