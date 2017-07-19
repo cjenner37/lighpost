@@ -1,7 +1,8 @@
 <% if @comment.commentable_type === 'Post' %>
-    $('#show_comments<%= @comment.commentable_id %>').text("Show <%= @commentable.comments.count %> comments");
-    $('#comments<%= @commentable.id %>').after("<%= j render @comment %>")
+	$('.post-comments').prepend("<%= j render @comment %>");
+	$('form').trigger("reset");
 <% else %>
-    $('#sub-comment-form<%= @comment.commentable_id.to_s %>').toggleClass('show');
-    $('#sub-comment-form<%= @comment.commentable_id.to_s %>').after("<%= j render @comment %>");
+	$('.comment-comments').prepend("<%= j render @comment %>");
+	$('form').trigger("reset");
+	$('.collapsible').collapsible();
 <% end %>
