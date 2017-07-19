@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-   has_many :workouts
+   has_many :workout_creations, class_name: "Workout"
    has_many :subscriptions, dependent: :destroy
    has_many :workouts, through: :subscriptions
    has_many :posts, dependent: :destroy
