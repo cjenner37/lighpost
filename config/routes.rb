@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/show'
 
-  get 'workouts/generate'
+  post 'workouts/generate'
  
 	root to: "home#index"
   
