@@ -5,9 +5,13 @@ Rails.application.routes.draw do
      registrations: 'users/registrations'
   }
   
-  resources :comments
+  resources :comments, only: [:create] do
+    resources :comments, only: [:create]
+  end
   resources :exercises
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create]
+  end
   resources :subscriptions
   resources :workouts
 

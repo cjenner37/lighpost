@@ -1,2 +1,15 @@
-<%= post.content %> <br> by: 
-<%= post.user.first_name %> <%= post.user.last_name %> <br>
+<%= post.content %>
+<ul class="collapsible" data-collapsible="accordion">
+  <li>
+    <div class="collapsible-header">Comments</div>
+    <div class="collapsible-body">
+      <% post.comments.each do |comment| %>
+        <%= render comment %>
+      <% end %>
+      <%= form_with model: [post, Comment.new] do |f| %>
+        <%= f.text_field :content, placeholder: 'Post content goes here' %>
+        <%= f.submit 'Post', class: 'btn' %>
+      <% end %> 
+    </div>
+  </li>
+</ul>
