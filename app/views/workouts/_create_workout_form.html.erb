@@ -1,17 +1,16 @@
-<h3>Choose your exercises</h3>
+
+<%= form_with model: @workout do |f|  %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+	<%= f.label "Exercises" %>
+	<%= f.select("exercise_id", Exercise.all.collect {|exercise| [ exercise.name, exercise.id ] }, { include_blank: true }, multiple: true ) %>
+	<%= f.submit "Create Workout", class: "btn" %>
+<% end %>
 
 
-  <div class="input-field col s12">
-    <select multiple>
-		<%= @muscle_groups.each do |muscle| %>
-	      <optgroup label="<%= muscle.muscles %>">
-				<%= muscle.exercises.each do |exercise| %>      
-		        <option><%= exercise.name %></option>
-		      <% end %>
-	      </optgroup>
-		<% end %>
-    </select>
-	 <label>Exercises by Muscle Group</label>
-  </div>
 
-<h3>Or create new exercies...</h3>
+
+
+<h3>Or create new exercise...</h3>
