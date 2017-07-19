@@ -1,2 +1,17 @@
-<h1>Create your own</h1>
+<h3>Choose your exercises</h3>
 
+
+  <div class="input-field col s12">
+    <select multiple>
+		<%= @muscle_groups.each do |muscle| %>
+	      <optgroup label="<%= muscle.muscles %>">
+				<%= muscle.exercises.each do |exercise| %>      
+		        <option><%= exercise.name %></option>
+		      <% end %>
+	      </optgroup>
+		<% end %>
+    </select>
+	 <label>Exercises by Muscle Group</label>
+  </div>
+
+<h3>Or create new exercies...</h3>

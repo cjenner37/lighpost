@@ -55,3 +55,15 @@ pushups.muscle_groups
 
 View all exercises for back:
 back.exercises
+
+Create new workout:
+basic = Workout.create(user_id: @user.id, name: "Basic workout", description: "Work the upper body")
+
+Join workout and exercise:
+basic.workout_exercises.create(exercise_id: 1)
+
+View exercise id's within workout:
+basic.workout_exercises
+
+Get an exercise in a workout:
+basic.workout_exercises.first.exercise

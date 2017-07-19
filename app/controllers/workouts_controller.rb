@@ -6,6 +6,9 @@ class WorkoutsController < ApplicationController
   end
 
   def new
+    @workout = Workout.new
+    @exercises = Exercise.all
+    @muscle_groups = MuscleGroup.all
   end
 
   def update
