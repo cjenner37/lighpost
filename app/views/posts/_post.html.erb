@@ -4,7 +4,15 @@
 <%= post.content %> <br><br> by <%= post.user.full_name %>
 <ul class="collapsible" data-collapsible="accordion">
   <li>
-    <div class="collapsible-header">Comments</div>
+    <div class="collapsible-header">
+      <% if post.comments.empty? %>
+        Leave a comment
+      <% else %>
+        <% post.comments.order(created_at: :desc).limit(1).each do |comment| %>
+          <%= comment.content %>
+        <% end %>
+      <% end %>
+    </div>
     <div class="collapsible-body">
         <%= recursive_comments post.comments.arrange(:order => :created_at) %>
         <div class="post-comments">
@@ -17,4 +25,6 @@
     </div>
   </li>
 </ul>
+
+
 
