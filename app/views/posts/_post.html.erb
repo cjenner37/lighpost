@@ -4,13 +4,15 @@
   <li>
     <div class="collapsible-header">Comments</div>
     <div class="collapsible-body">
-      <% post.comments.each do |comment| %>
-        <%= render comment %>
-      <% end %>
-      <%= form_with model: [post, Comment.new] do |f| %>
-        <%= f.text_field :content, placeholder: 'Post content goes here' %>
-        <%= f.submit 'Post', class: 'btn' %>
-      <% end %> 
+        <%= recursive_comments post.comments.arrange(:order => :created_at) %>
+        
+        <div class="post-comments">
+          <%= form_with model: [post, Comment.new] do |f| %>
+            <%= f.text_field :content, placeholder: 'Comment' %>
+            <%= f.hidden_field :parent_id %>
+            <%= f.submit 'Post', class: 'btn' %>
+          <% end %> 
+        </div>
     </div>
   </li>
 </ul>

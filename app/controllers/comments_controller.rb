@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :find_commentable
 
   def new
-    @comment = @commentable.comments.new comment_params
+    @comment = @commentable.comments.new(:parent_id => params[:parent_id])
     @comment.save
   end
 
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
   def comment_params
     params[:comment][:user_id] = current_user.id
-    params.require(:comment).permit(:content, :user_id)
+    params.require(:comment).permit(:content, :user_id, :parent_id)
   end
 
   def find_commentable

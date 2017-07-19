@@ -1,12 +1,16 @@
 <%= comment.content %>
 <ul class="collapsible" data-collapsible="accordion">
 	<li>
-		<div class="collapsible-header">Comment</div>
+		<div class="collapsible-header">Replies</div>
 		<div class="collapsible-body">
-			<%= form_with model: [comment, Comment.new] do |f| %>
-				<%= f.text_field :content, placeholder: 'Comment' %>
-				<%= f.submit 'Comment', class: 'btn' %>
-			<% end %>
+			<%= recursive_comments comment.comments.arrange(:order => :created_at) %>
+			<div class="comment-comments">
+				<%= form_with model: [comment, Comment.new] do |f| %>
+					<%= f.text_field :content, placeholder: 'Comment' %>
+					<%= f.hidden_field :parent_id %>
+					<%= f.submit 'Reply', class: 'btn' %>
+				<% end %>
+			</div>
 		</div>
 	</li>
 </ul>
