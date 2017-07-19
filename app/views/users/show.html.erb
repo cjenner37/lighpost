@@ -22,9 +22,9 @@
 	  <div id="my_workouts" class="col s12">
 	  	<div id="profile_workout_selector_buttons" class="center-align">
 				<%= link_to 'Create New Workout', new_workout_path, :class => "btn btn-default btn-lg" %>
-				<%= link_to 'Generate New Workout', new_workout_path, :class => "btn btn-default btn-lg" %>
+				<%= link_to 'Generate New Workout', workouts_generate_path, :class => "btn btn-default btn-lg" %>
 			</div>
-			<% @user.workouts.reverse.each do |workout| %>
+			<% @user.workout_creations.reverse.each do |workout| %>
 				<%= workout.name %>
 			<% end %>
 	  </div>
