@@ -1,23 +1,8 @@
 <h1>Post below!</h1>
-
+<%= render 'form' %>
 <div class="all-posts">
 	<% @posts.order(created_at: :desc).each do |post| %>
 		<%= render post, post_class: "feed_post" %>
 	<% end %>
 </div>
 
-
-<ul class="collapsible" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-  </ul>
