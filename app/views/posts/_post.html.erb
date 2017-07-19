@@ -1,2 +1,4 @@
-<%= post.content %> <br> by: 
-<%= post.user.first_name %> <%= post.user.last_name %> <br>
+<div class="post <%= post_class %>">
+	<%= post.content %> <br><br> by: 
+	<%= post.user.first_name %> <%= post.user.last_name %> <br>
+</div>
