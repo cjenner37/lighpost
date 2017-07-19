@@ -7,7 +7,7 @@ class WorkoutsController < ApplicationController
     puts params
     puts params[:workout][:exercise_id]
 
-    @workout = Workout.create(user_id: current_user.id, name: params[:workout][:name], description: params[:workout][:description])
+    @workout = Workout.create!(user_id: current_user.id, name: params[:workout][:name], description: params[:workout][:description])
     params[:workout][:exercise_id].each do |exercise_id|
       if exercise_id != ""
         @workout.workout_exercises.create(exercise_id: exercise_id)
