@@ -5,5 +5,6 @@ class UsersController < ApplicationController
   def show
   	@user = current_user
   	@post = Post.new
+  	@workout = Workout.new
   end
 end
