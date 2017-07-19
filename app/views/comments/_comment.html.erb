@@ -1,0 +1,13 @@
+<%= comment.content %>
+<ul class="collapsible" data-collapsible="accordion">
+	<li>
+		<div class="collapsible-header">Comment</div>
+		<div class="collapsible-body">
+			<%= form_with model: [comment, Comment.new] do |f| %>
+				<%= f.text_field :content, placeholder: 'Comment' %>
+				<%= f.submit 'Comment', class: 'btn' %>
+			<% end %>
+		</div>
+	</li>
+</ul>
+
