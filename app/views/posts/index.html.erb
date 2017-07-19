@@ -2,7 +2,7 @@
 
 <div class="all-posts">
 	<% @posts.order(created_at: :desc).each do |post| %>
-		<%= render post %>
+		<%= render post, post_class: "feed_post" %>
 	<% end %>
 </div>
 
