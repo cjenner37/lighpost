@@ -1,3 +1,19 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#post_field_wrapper {
+	justify-content: center;
+	height: auto;
+	width: 55vw;
+	margin: auto;
+	border: solid;
+	border-color: #64b5f6;
+	padding: 30px;
+}
+
+.post_text_area {
+	height: 200px;
+	widows: 45vw;
+}
