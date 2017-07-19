@@ -2,13 +2,14 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    @comment = Comment.new
   end
 
   def create
     @post = current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save
-        format.js   
+        format.js
       end     
     end
   end
