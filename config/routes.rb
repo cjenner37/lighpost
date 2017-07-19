@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   get 'workouts/generate'
  
 	root to: "home#index"
-
+  
 end
