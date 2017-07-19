@@ -13,13 +13,18 @@ class WorkoutsController < ApplicationController
         @workout.workout_exercises.create(exercise_id: exercise_id)
       end
     end
-    redirect_to workout_path(@workout.id)
+    redirect_to @workout
   end
 
   def new
     @workout = Workout.new
+    @exercise = Exercise.new
     @exercises = Exercise.all
     @muscle_groups = MuscleGroup.all
+  end
+
+  def generate
+
   end
 
   def update

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'users/index'
   get 'users/show'
+
+  get 'workouts/generate'
  
 	root to: "home#index"
 

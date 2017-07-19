@@ -8,7 +8,14 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = Exercise.create(exercise_params)
+    puts params
+    @exercise = Exercise.create(name: params[:exercise][:name], description: params[:exercise][:description])
+    params[:exercise][:muscle_group_id].each do |muscle_group_id|
+      if muscle_group_id != ""
+        @exercise.muscle_group_exercises.create(muscle_group_id: muscle_group_id)
+      end
+    end
+    redirect_to @exercise
   end
 
   def update
@@ -18,6 +25,7 @@ class ExercisesController < ApplicationController
   end
 
   def show
+    @exercise = Exercise.find(params[:id])
   end
 
   def destroy
