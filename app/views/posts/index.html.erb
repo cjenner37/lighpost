@@ -1,5 +1,9 @@
 <h1>Post below!</h1>
-<%= render 'form' %>
+
+<div id="post_field_wrapper">
+	<%= render 'form' %>
+</div>
+
 <div class="all-posts">
 	<% @posts.order(created_at: :desc).each do |post| %>
 		<%= render post, post_class: "feed_post" %>

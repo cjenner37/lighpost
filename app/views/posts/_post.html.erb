@@ -1,11 +1,12 @@
 
-<%= post.content %> <br> by <%= post.user.full_name %>
+<br>
+<br>
+<%= post.content %> <br><br> by <%= post.user.full_name %>
 <ul class="collapsible" data-collapsible="accordion">
   <li>
     <div class="collapsible-header">Comments</div>
     <div class="collapsible-body">
         <%= recursive_comments post.comments.arrange(:order => :created_at) %>
-        
         <div class="post-comments">
           <%= form_with model: [post, Comment.new] do |f| %>
             <%= f.text_field :content, placeholder: 'Comment' %>

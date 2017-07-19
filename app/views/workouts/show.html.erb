@@ -1,2 +1,17 @@
-<h1>Workouts#show</h1>
-<p>Find me in app/views/workouts/show.html.erb</p>
+<h1><%= @workout.name %></h1>
+<h5><%= @workout.description %></h5>
+
+<h3>Exercises:</h3>
+<ul>
+	<% @workout.exercises.each do |exercise| %>
+		<li>
+			<h4><%= link_to exercise.name, exercise %></h4>
+			<p>this works your: </p>
+			<ul>
+				<% exercise.muscle_groups.each do |muscle| %>
+					<li><%= muscle.muscles %></li>
+				<% end %>
+			</ul>
+		</li>
+	<% end %>
+</ul>
