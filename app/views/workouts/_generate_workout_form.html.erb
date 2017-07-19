@@ -1,1 +1,12 @@
 <h1>Generate your workout</h1>
+
+  <div class="input-field col s12">
+    <select multiple>
+      <optgroup label="Desired Muscle Groups">
+			<%= @muscle_groups.each do |muscle| %>   
+	        <option><%= muscle.muscles %></option>
+			<% end %>
+      </optgroup>
+    </select>
+	 <label>Desired Mucle Groups</label>
+  </div>
