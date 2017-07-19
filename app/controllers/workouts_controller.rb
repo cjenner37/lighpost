@@ -24,7 +24,15 @@ class WorkoutsController < ApplicationController
   end
 
   def generate
-
+    @workout = current_user.workouts.create(name: params[:name], description: params[:description])
+    params[:muscle_group_id].each do |muscle_group|
+      if !muscle_group.empty?
+        @muscle = MuscleGroup.find(muscle_group)
+        @exercise = muscle_group.exercises.sample
+        @workout.workout_exercises.create(exercise_id: @exercise.id)
+      end
+    end
+    redirect_to @workout
   end
 
   def update
