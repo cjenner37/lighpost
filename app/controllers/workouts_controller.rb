@@ -29,7 +29,9 @@ class WorkoutsController < ApplicationController
       if !muscle_group.empty?
         @muscle = MuscleGroup.find(muscle_group)
         @exercise = @muscle.exercises.sample
-        @workout.workout_exercises.create!(exercise_id: @exercise.id)
+        if @exercise
+          @workout.workout_exercises.create!(exercise_id: @exercise.id)
+        end
       end
     end
     redirect_to @workout
