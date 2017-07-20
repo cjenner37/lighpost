@@ -1,9 +1,11 @@
-<h1 align="center"> <%= @user.first_name %>'s Profile</h1>
+<h1 align="center"> <%= @user.full_name %></h1>
 
-<div id="profile_links">
-	<%= link_to 'Edit Profile', edit_user_registration_path, class: 'link-to-text-color' %>
-	<br>
-	<%= link_to 'Delete Profile', user_registration_path, data: {:confirm => "Really? You don't like us anymore?"}, :method => :delete, class: 'link-to-text-color' %>
+<div class="profile-img">
+	<% if @user.avatar.present? %>
+	<%= image_tag @user.avatar.url(:medium), class: 'circle responsive-img' %>
+	<% else %>
+		<p>No profile image. <%= link_to " Add one!", edit_user_registration_path %></p>
+	<% end %>
 </div>
 
 <div id="tabs_wrapper">
@@ -22,12 +24,39 @@
 	  <div id="my_workouts" class="col s12">
 	  	<div id="profile_workout_selector_buttons" class="center-align">
 				<%= link_to 'Create New Workout', new_workout_path, :class => "btn btn-default btn-lg" %>
-				<%= link_to 'Generate New Workout', workouts_generate_path, :class => "btn btn-default btn-lg" %>
 			</div>
 			<% @user.workout_creations.reverse.each do |workout| %>
-				<%= workout.name %>
+				<ul class="collection">
+					<li>
+						<%= link_to workout.name, workout %>
+					</li>
+				</ul>
 			<% end %>
 	  </div>
 	</div>
 </div>
 
+<div id="profile_links">
+	<%= link_to 'Edit Profile', edit_user_registration_path, class: 'link-to-text-color' %>
+	<br>
+	<%= link_to 'Delete Profile', user_registration_path, data: {:confirm => "Really? You don't like us anymore?"}, :method => :delete, class: 'link-to-text-color' %>
+</div>
+
+
+
+<ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="https://dummyimage.com/200">
+      </div>
+      <a href="#!user"><img class="circle" src="https://dummyimage.com/200"></a>
+      <a href="#!name"><span class="white-text name">John Doe</span></a>
+      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
