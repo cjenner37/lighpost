@@ -1,18 +1,26 @@
 
-<%= form_with model: @workout do |f|  %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= f.label :description %>
-	<%= f.text_field :description %>
-	<%= f.label "Exercises" %>
-	<%= f.select("exercise_id", Exercise.all.collect {|exercise| [ exercise.name, exercise.id ] }, { include_blank: true }, multiple: true ) %>
-	<%= f.submit "Create Workout", class: "btn" %>
-<% end %>
+<div class="row">
+	<div class="col s6">
+		<h4>Create Workout</h4>
+		<%= form_with model: @workout do |f|  %>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+			<%= f.label :description %>
+			<%= f.text_field :description %>
+			<%= f.label "Exercises" %>
+			<%= f.select("exercise_id", Exercise.all.collect {|exercise| [ exercise.name, exercise.id ] }, { include_blank: true }, multiple: true ) %>
+			<%= f.submit "Create Workout", class: "btn" %>
+		<% end %>
+	</div>
+	<div class="col s6">
+		<h4>Create Exercise</h4>
+		<%= render 'exercises/form' %>
+	</div>
+</div>
 
 
 
 
 
-<h3>Or create new exercise...</h3>
 
-<%= render 'exercises/form' %>
+

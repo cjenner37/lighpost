@@ -13,6 +13,7 @@
         <% post.comments.order(created_at: :desc).limit(1).each do |comment| %>
           <span><%= comment.content %></span>
         <% end %>
+        <span style="opacity: 0.75; font-size: x-small;"> +<%= post.comments.count %> comments</span>
       <% end %>
     </div>
     <div class="collapsible-body">

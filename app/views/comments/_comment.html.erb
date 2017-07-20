@@ -2,7 +2,15 @@
 <h6>From <%= comment.user.full_name %></h6>
 <ul class="collapsible" data-collapsible="accordion">
 	<li>
-		<div class="collapsible-header">Replies</div>
+		<div class="collapsible-header">
+			<% if comment.comments.empty? %>
+				<span style="font-size: small">Reply</span>
+			<% elsif comment.comments.count === 1 %>
+				<span style="font-size: small">1 Reply</span>
+			<% else %>
+				<span style="font-size: small"><%= comment.comments.count %> Replies</span>
+			<% end %>
+		</div>
 		<div class="collapsible-body">
 			<%= recursive_comments comment.comments.arrange(:order => :created_at) %>
 			<div class="comment-comments">
