@@ -36,27 +36,22 @@
 	</div>
 </div>
 
-<div id="profile_links">
-	<%= link_to 'Edit Profile', edit_user_registration_path, class: 'link-to-text-color' %>
-	<br>
-	<%= link_to 'Delete Profile', user_registration_path, data: {:confirm => "Really? You don't like us anymore?"}, :method => :delete, class: 'link-to-text-color' %>
-</div>
-
-
-
 <ul id="slide-out" class="side-nav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="https://dummyimage.com/200">
-      </div>
-      <a href="#!user"><img class="circle" src="https://dummyimage.com/200"></a>
-      <a href="#!name"><span class="white-text name">John Doe</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  <li><div class="user-view">
+    <div class="background">
+      <img src="https://unsplash.it/300/200/?random">
+    </div>
+    <% if @user.avatar? %>
+    	<%= image_tag @user.avatar.url(:thumb), class: 'circle' %>
+    <% end %>
+    <a href="#!name"><span class="white-text name"><%= @user.full_name %></span></a>
+    <a href="#!email"><span class="white-text email"><%= @user.email %></span></a>
+  </div></li>
+  <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+  <li><%= link_to 'Delete Profile', user_registration_path, data: {:confirm => "Really? You don't like us anymore?"}, :method => :delete %> <i class=class="material-icons">Pleez dant dalate. Heres a kirby <(^_^<) </i>
+  </li>
+  <li><div class="divider"></div></li>
+  <li><a class="subheader">Subheader</a></li>
+  <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
 </ul>
-<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+<a href="#" style="display: flex; justify-content: flex-end;" data-activates="slide-out" class="button-collapse"><i class="material-icons">Profile settings</i></a>
