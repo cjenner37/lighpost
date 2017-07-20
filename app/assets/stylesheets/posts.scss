@@ -11,9 +11,22 @@
 	border: solid;
 	border-color: #64b5f6;
 	padding: 30px;
+	margin-top: 30px;
 }
 
 .post_text_area {
 	height: 200px;
 	widows: 45vw;
 }
+
+.post-content {
+	border: 2px solid skyblue;
+	padding: 15px;
+}
+
+.collapsible-header {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

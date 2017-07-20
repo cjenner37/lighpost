@@ -27,11 +27,17 @@
 				<%= link_to 'Create New Workout', new_workout_path, :class => "btn btn-default btn-lg" %>
 			</div>
 			<% @user.workout_creations.reverse.each do |workout| %>
-				<ul class="collection">
-					<li>
-						<%= link_to workout.name, workout %>
-					</li>
-				</ul>
+				<div class="col s12 m4">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><%= workout.name %></span>
+              <p><%= workout.description %></p>
+            </div>
+            <div class="card-action">
+              <%= link_to 'View Workout', workout %>
+            </div>
+          </div>
+        </div>
 			<% end %>
 	  </div>
 	  <div id="my_messages" class="col s12">
@@ -59,4 +65,4 @@
   <li><a class="subheader">Subheader</a></li>
   <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
 </ul>
-<a href="#" style="display: flex; justify-content: flex-end;" data-activates="slide-out" class="button-collapse"><i class="material-icons">Profile settings</i></a>
+<a href="#" style="position: fixed; bottom: 15pt; left: 10pt;" data-activates="slide-out" class="button-collapse"><i class="material-icons">Profile settings</i></a>

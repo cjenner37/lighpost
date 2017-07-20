@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
   
+  get 'chat/index'
+
+  get 'chat/new'
+
+  get 'chat/create'
+
+  get 'chat/update'
+
+  get 'chat/edit'
+
+  get 'chat/show'
+
+  get 'chat/destroy'
+
   devise_for :users, controllers: {
      sessions: 'users/sessions',
      registrations: 'users/registrations'
