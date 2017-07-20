@@ -1,24 +1,20 @@
 <%= link_to "Create New Workout", new_workout_path, class: "btn" %>
 
-<ul>
-	<% @workouts.each do |workout| %>
-		<li>
-			<h4>
-				<%= link_to workout.name, workout %>
-			</h4>
-			<p>Made by <%= link_to workout.creator.full_name, workout.creator %> </p>
 
-			<p><%= workout.description %></p>
-			<p>
-				This workout has <%= workout.exercises.count %> exercises and will work your 
-				<ul>
-				<% workout.exercises.each do |exercise| %>
-					<% exercise.muscle_groups.each do |muscle| %>
-						<li><%= muscle.muscles %></li>
-					<% end %> 
-				<% end %>
-				</ul>
-			</p>
-		</li>
+<div class="row">
+	<% @workouts.each do |workout| %>
+
+        <div class="col s12 m4">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><%= workout.name %></span>
+              <p><%= workout.description %></p>
+            </div>
+            <div class="card-action">
+              <%= link_to 'View Workout', workout %>
+            </div>
+          </div>
+        </div>
+
 	<% end %>
-</ul>
+</div>
