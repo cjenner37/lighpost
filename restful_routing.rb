@@ -1,4 +1,11 @@
                   Prefix Verb   URI Pattern                              Controller#Action
+              chat_index GET    /chat/index(.:format)                    chat#index
+                chat_new GET    /chat/new(.:format)                      chat#new
+             chat_create GET    /chat/create(.:format)                   chat#create
+             chat_update GET    /chat/update(.:format)                   chat#update
+               chat_edit GET    /chat/edit(.:format)                     chat#edit
+               chat_show GET    /chat/show(.:format)                     chat#show
+            chat_destroy GET    /chat/destroy(.:format)                  chat#destroy
         new_user_session GET    /users/sign_in(.:format)                 users/sessions#new
             user_session POST   /users/sign_in(.:format)                 users/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)                users/sessions#destroy
