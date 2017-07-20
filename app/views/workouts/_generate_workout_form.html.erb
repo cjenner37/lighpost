@@ -5,5 +5,5 @@
 	<%= f.text_field :description %>
 	<%= f.label "Muscle groups involved" %>
 	<%= f.select("muscle_group_id", MuscleGroup.all.collect {|muscle| [ muscle.muscles, muscle.id ] }, { include_blank: true }, multiple: true ) %>
-	<%= f.submit "Create Exercise", class: "btn" %>
+	<%= f.submit "Generate", class: "btn" %>
 <% end %>
