@@ -51,6 +51,8 @@ cancel_user_registration GET    /users/cancel(.:format)                  users/r
                          DELETE /workouts/:id(.:format)                  workouts#destroy
               home_index GET    /home/index(.:format)                    home#index
              users_index GET    /users/index(.:format)                   users#index
-              users_show GET    /users/show(.:format)                    users#show
+
+                    user GET    /users/:id(.:format)                     users#show
+
        workouts_generate POST   /workouts/generate(.:format)             workouts#generate
                     root GET    /                                        home#index
