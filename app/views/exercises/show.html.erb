@@ -8,3 +8,21 @@
 		<li><%= muscle_group.muscles %></li>
 	<% end %>
 </ul>
+
+<div class="exercise-images">
+	<% if !@exercise.images.empty? %>
+		<% @exercise.images.each do |image| %>
+			<%= image_tag image.avatar.url, class: 'materialboxed', width: '300px' %>
+		<% end %>
+	<% else %>
+		<p></p>
+	<% end %>
+</div>
+
+
+<h4>Add an image to this exercise:</h4>
+<%= form_with url: 'add_image', html: { multipart: true } do |f| %>
+	<%= f.file_field :avatar %>
+	<%= f.hidden_field :exercise_id, value: @exercise.id %>
+	<%= f.submit %>	
+<% end %>
