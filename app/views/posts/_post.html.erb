@@ -1,15 +1,17 @@
 
 <br>
 <br>
-<%= post.content %> <br><br> by <%= post.user.full_name %>
-<ul class="collapsible" data-collapsible="accordion">
+<div class="post-content">
+  <%= post.content %> <br><br> by <%= post.user.full_name %>
+</div>
+<ul class="collapsible popout" data-collapsible="accordion">
   <li>
     <div class="collapsible-header">
       <% if post.comments.empty? %>
         Leave a comment
       <% else %>
         <% post.comments.order(created_at: :desc).limit(1).each do |comment| %>
-          <%= comment.content %>
+          <span><%= comment.content %></span>
         <% end %>
       <% end %>
     </div>
