@@ -34,7 +34,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   post 'workouts/generate'
- 
+  post 'exercises/add_image'
+
 	root to: "home#index"
   
 end

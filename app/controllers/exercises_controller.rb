@@ -24,6 +24,13 @@ class ExercisesController < ApplicationController
   def edit
   end
 
+  def add_image
+    @exercise = Exercise.find(params[:exercise_id])
+    @image = @exercise.images.create!(params[:avatar])
+  
+    redirect_to @exercise
+  end
+
   def show
     @exercise = Exercise.find(params[:id])
   end
@@ -35,4 +42,9 @@ class ExercisesController < ApplicationController
   def exercise_params
     params.require(:exercise).permit(:name, :description)
   end
+
+  def image_params
+    params.require(:add_image).permit(:avatar)
+  end
+
 end

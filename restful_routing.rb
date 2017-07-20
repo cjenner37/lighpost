@@ -60,4 +60,5 @@ cancel_user_registration GET    /users/cancel(.:format)                  users/r
              users_index GET    /users/index(.:format)                   users#index
                     user GET    /users/:id(.:format)                     users#show
        workouts_generate POST   /workouts/generate(.:format)             workouts#generate
+     exercises_add_image POST   /exercises/add_image(.:format)           exercises#add_image
                     root GET    /                                        home#index
