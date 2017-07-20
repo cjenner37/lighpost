@@ -2,16 +2,20 @@
 <h5><%= @workout.description %></h5>
 
 <h3>Exercises:</h3>
-<ul>
-	<% @workout.exercises.each do |exercise| %>
-		<li>
-			<h4><%= link_to exercise.name, exercise %></h4>
-			<p>this works your: </p>
-			<ul>
-				<% exercise.muscle_groups.each do |muscle| %>
-					<li><%= muscle.muscles %></li>
-				<% end %>
-			</ul>
-		</li>
-	<% end %>
-</ul>
+<div class="row">
+	<ul>
+		<% @workout.exercises.each do |exercise| %>
+			<div class="col s6">
+				<li>
+					<h4><%= link_to exercise.name, exercise %></h4>
+					<p>this works your: </p>
+					<ul>
+						<% exercise.muscle_groups.each do |muscle| %>
+							<li><%= muscle.muscles %></li>
+						<% end %>
+					</ul>
+				</li>
+			</div>
+		<% end %>
+	</ul>
+</div>
