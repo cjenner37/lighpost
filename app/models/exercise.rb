@@ -4,7 +4,7 @@ class Exercise < ApplicationRecord
 	has_many :workouts, through: :workout_exercises
 	has_many :muscle_group_exercises
 	has_many :muscle_groups, through: :muscle_group_exercises
-	has_many :images
+	has_many :images, as: :imageable
 
 	validates :name, presence: true
 	validates :description, presence: true
