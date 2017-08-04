@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :images
+  has_many :images, as: :imageable
   has_many :comments, as: :commentable, dependent: :destroy
 
   validates :content, presence: true

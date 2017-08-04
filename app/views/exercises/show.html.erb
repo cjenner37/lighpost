@@ -9,10 +9,10 @@
 	<% end %>
 </ul>
 
-<div class="exercise-images">
+<div class="exercise-images row">
 	<% if !@exercise.images.empty? %>
 		<% @exercise.images.each do |image| %>
-			<%= image_tag image.avatar.url, class: 'materialboxed', width: '300px' %>
+			<%= image_tag image.avatar.url, class: 'materialboxed col s12 m4 l3', width: '300px' %>
 		<% end %>
 	<% else %>
 		<p></p>
